@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+    monitor:
+        container_name: monitor
+        image: grafana/grafana
+        environment:
+            - GF_SERVER_ROOT_URL=${URL}
+        volumes:
+            -  ./data:/var/lib/grafana
+        ports:
+            - "${PORT}:3000"
